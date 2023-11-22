@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../Banner/banner.css";
+import Card from "./card";
 
 function Banner() {
   const [dateTime, setDateTime] = useState(new Date());
@@ -9,7 +10,6 @@ function Banner() {
       setDateTime(new Date());
     }, 1000);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(interval);
   }, []);
 
@@ -29,6 +29,9 @@ function Banner() {
   return (
     <div className="banner-image">
       <div className="top">{formattedDateTime}</div>
+      <div className="banner-bottom">
+      <Card/>
+      </div>
     </div>
   );
 }
