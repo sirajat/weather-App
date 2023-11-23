@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Banner/banner.css";
 import Card from "./card";
+import Weather from "../Weather_Section/weather";
 
 function Banner() {
   const [dateTime, setDateTime] = useState(new Date());
@@ -31,6 +32,9 @@ function Banner() {
       <div className="top">{formattedDateTime}</div>
       <div className="banner-bottom">
       <Card/>
+      </div>
+      <div className="bottom">
+        <Weather/>
       </div>
     </div>
   );
