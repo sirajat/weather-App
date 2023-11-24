@@ -1,23 +1,26 @@
+
+// WeatherCard.js
 import React, { useState, useEffect } from 'react';
 import '../Weather_Section/weather.css';
 
-function WeatherCard() {
+function WeatherCard({ city }) {
   const [weatherData, setWeatherData] = useState(null);
 
   // Replace 'YOUR_API_KEY' with the actual API key you obtained from OpenWeatherMap
   const apiKey = '78b57518e4ce4989821102233232311';
-  const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=London&aqi=no`;
 
   useEffect(() => {
+    const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+
     // Fetch data from the API
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => setWeatherData(data))
       .catch(error => console.error('Error fetching weather data:', error));
-  }, [apiUrl]);
+  }, [city, apiKey]);
 
   // Check if data has been fetched
-  if (!weatherData) {
+  if (!weatherData || !weatherData.current) {
     return <div>Loading...</div>;
   }
 
@@ -26,7 +29,7 @@ function WeatherCard() {
 
   return (
     <div className='weather-card'>
-      <h2>Weather Information</h2>
+      <h2>{city} </h2>
       <p>Temperature: {temp_c}°C</p>
       <p>Humidity: {humidity}%</p>
       <p>Wind: {wind_kph} km/h, {wind_dir}</p>

@@ -19,7 +19,8 @@
     width: 100%;
     height: 12vh;
     background-color: brown;
-    color: rgb(41, 39, 39);
+    color: #fff;
+    padding-left: 15px;
     display: flex;
     align-items: center;
     font-size: 18px;
