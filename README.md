@@ -1,5 +1,5 @@
 # Weather App (ReactJS)
-React JS Tutorial for the learning purpose 
+React JS Tutorial (Personalized Coaching Project No 101)
 1. useState
 2. useffect
 3. reusable component
