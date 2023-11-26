@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../Banner/banner.css";
-import Card from "./card";
 import Weather from "../Weather_Section/weather";
 
 function Banner() {
@@ -31,7 +30,6 @@ function Banner() {
     <div className="banner-image">
       <div className="top">{formattedDateTime}</div>
       <div className="banner-bottom">
-      <Card/>
       </div>
       <div className="bottom">
         <Weather/>

@@ -1,4 +1,5 @@
 .weather {
+    position: relative;
     background-image: url("https://www.fisheries.noaa.gov/s3/styles/media_750_x500/s3/2022-02/750x500-elwha-river-credit-john-mcmillan.jpg?itok=4vwfC3a-");
     min-width: 100%;
     height: 40vh;
@@ -11,18 +12,6 @@
     overflow-x: scroll;
     column-gap: 15px;
 }
-
-
-.weather::before {
-    content: "";
-    position: absolute;
-    top: 60vh;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1; 
-  }
 
 
 
@@ -40,10 +29,26 @@
     font-size: 16px;
 }
 
-.weather-card h2{
+.weather-card h2 {
     margin: 5px;
 }
 
-.weather-card p{
+.weather-card p {
     line-height: 2;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .weather {
+        height: 60vh;
+    }
+
+    .weather::before {
+        top: 40vh;
+    }
+
+    .weather-card {
+        min-width: 100%;
+        height: auto;
+    }
 }
